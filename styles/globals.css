@@ -2,26 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+img {
+  max-height: 100%;
+  /* max-width: 100%; */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+input,
+textarea,
+select {
+  @apply border border-gray-200 rounded-md px-3 py-2 w-full;
+  @apply mb-2;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+input:focus,
+textarea:focus,
+select:focus {
+  @apply border-blue-900;
+}
+
+h1 {
+  @apply text-gray-800 mb-4 text-xl;
+}
+
+label {
+  @apply text-gray-600 text-sm;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-4 py-1 rounded-sm;
+}
+
+table.basic_table {
+  @apply w-full bg-white rounded-sm shadow-lg;
+}
+
+table.basic_table thead tr th {
+  @apply text-sm text-gray-600 uppercase border-b-4 px-4 py-2 text-left justify-start;
+}
+
+table.basic_table tr td {
+  @apply px-4 py-1;
+}
+
+table.basic_table a {
+  @apply px-4 py-1 rounded-md text-white text-sm inline-flex gap-1 mx-1 bg-gray-600;
+}
+
+.btn_default,
+.btn_red {
+  @apply px-4 py-1 rounded-md;
+}
+
+.btn_red {
+  @apply bg-red-800 text-white;
+}
+
+.btn_default {
+  @apply bg-gray-500 text-white;
 }
